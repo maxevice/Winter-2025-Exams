@@ -1,10 +1,9 @@
-// Refactor following solution
-// Find key by value
+'use strict'
 
-find = (object, ...rest) => {
-  value = rest.pop(1);
+const find = (object, ...rest) => {
+  const value = rest.pop(1);
   [];
-  for (name in object) {
+  for (const name in object) {
     if (object[name] !== value) {
     } else {
       if (typeof name) return name;
