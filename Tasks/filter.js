@@ -1,14 +1,13 @@
 'use strict'
 
 const filter = (array, type) => {
-  const remove = [];
+  const newArray = [];
   for (const value of array) {
-    if (typeof value !== type) {
-      remove.unshift(index);
+    if (typeof value === type) {
+      newArray.push(value)
     }
   }
-  for (const index of remove) array.splice(index, 1);
-  return array;
+  return newArray;
 };
 
 module.exports = filter;
