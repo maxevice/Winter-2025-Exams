@@ -1,12 +1,7 @@
 'use strict'
 
-const count = (obj) => {
-  let sum = 0;
-  const values = Object.values(obj);
-  for (const value of values) {
-    if (typeof value === "number") sum += value;
-  }
-  return sum;
-};
+const count = (obj) => 
+  Object.values(obj)
+    .reduce((sum, nextValue) => typeof nextValue === 'number' ? sum + nextValue : sum, 0);
 
 module.exports = count;
