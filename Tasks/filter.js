@@ -1,13 +1,7 @@
 'use strict'
 
 const filter = (array, type) => {
-  const newArray = [];
-  for (const value of array) {
-    if (typeof value === type) {
-      newArray.push(value)
-    }
-  }
-  return newArray;
+  return array.filter((value) => typeof value === type)
 };
 
 module.exports = filter;
