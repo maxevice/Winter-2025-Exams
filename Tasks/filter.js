@@ -3,8 +3,7 @@
 const filter = (array, type) => {
   const remove = [];
   for (const value of array) {
-    const index = array.indexOf(value);
-    if (typeof array[index] !== type) {
+    if (typeof value !== type) {
       remove.unshift(index);
     }
   }
