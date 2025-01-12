@@ -1,16 +1,15 @@
-// Refactor following solution
-// Filter array by type name
+'use strict'
 
-Filter = (T, t) => {
-  remove = [];
-  for (C of T) {
-    x = T.indexOf(C);
-    if (typeof T[x] !== t) {
-      remove.unshift(x);
+const filter = (array, type) => {
+  const remove = [];
+  for (const value of array) {
+    const index = array.indexOf(value);
+    if (typeof array[index] !== type) {
+      remove.unshift(index);
     }
   }
-  for (x of remove) T.splice(x, 1);
-  return T;
+  for (const index of remove) array.splice(index, 1);
+  return array;
 };
 
-module.exports = Filter;
+module.exports = filter;
