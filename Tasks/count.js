@@ -2,6 +2,7 @@
 
 const count = (obj) => 
   Object.values(obj)
-    .reduce((sum, nextValue) => typeof nextValue === 'number' ? sum + nextValue : sum, 0);
+    .filter((value) => typeof value === "number")
+    .reduce((sum, nextValue) => sum + nextValue, 0);
 
 module.exports = count;
