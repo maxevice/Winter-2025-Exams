@@ -1,11 +1,12 @@
 'use strict'
 
 const find = (object, value) => {
-  for (const name in object) {
-    if (object[name] === value) {
-      return name;
+  const pairs = Object.entries(object)
+  for (const [key, val] of pairs) {
+    if (val === value) {
+      return key;
     }
   }
-};
+}
 
 module.exports = find;
