@@ -2,17 +2,11 @@
 
 const getValueBetween = (str, prefix, suffix) => {
   const prefixIndex = str.indexOf(prefix);
-  if (prefixIndex === -1) return '';
+  const suffixIndex = str.indexOf(suffix);
+  if (prefixIndex === -1 || suffixIndex === -1) return '';
   const startPoint = prefixIndex + prefix.length;
-  let result = str.substring(startPoint);
-  if (suffix) {
-    const suffixIndex = result.indexOf(suffix);
-    if (suffixIndex === -1) {
-      return '';
-    }
-    result = result.substring(0, suffixIndex);
-  }
-  return result;
+  const result = str.substring(startPoint, suffixIndex)
+  return result
 };
 
 module.exports = getValueBetween;
