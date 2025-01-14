@@ -1,17 +1,17 @@
 'use strict'
 
-let compare = (first_values, second_values) => {
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
+const compare = (dict1, dict2) => {
+  const dict1Keys = Object.keys(dict1);
+  const dict2Keys = Object.keys(dict2);
+  if (dict1Keys.join('-') !== dict2Keys.join('-')) return false;
+  let flag = true;
+  for (const key of dict1Keys) {
+    if (dict1[key] === dict2[key]) flag = flag && true;
     else {
-      e = e && false;
+      flag = flag && false;
     }
   }
-  return e;
+  return flag;
 };
 
 module.exports = compare;
