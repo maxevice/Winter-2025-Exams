@@ -1,7 +1,6 @@
 'use strict'
 
-let compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
+let compare = (first_values, second_values) => {
   let a = Object.keys(first_values);
   let b = Object.keys(second_values);
   if (a.join('-') !== b.join('-')) return false;
